@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} Grant Info {% endblock title %}
+
+
+{% block body %}
+
+<div class="container my-3 ">
+<h3> <u>Grants Details Search Results</u> </h3>
+</div>
+
+<ul style="list-style-type:none;">
+{% for element in results %}
+    <li>
+    <div class="container my-4">
+        <strong>Fund Title</strong> : {{ element.fund_title }}
+    </div>
+    <div class="container my-1">
+        <strong>Summary</strong> : <br> {% autoescape off %}{{ element.summary }}{% endautoescape %}
+    </div>
+    <div class="container my-1">
+        <strong>Opportunity Status</strong> : {{ element.opportunity_status }}
+    </div>
+    <div class="container my-1">
+        <strong>Award Range</strong> : {{ element.award_range }}
+    </div>
+    <div class="container">
+        <hr>
+    </div>    
+    </li>
+{% endfor %}
+</ul>
+<div class="container my-3">
+        <a class="btn btn-primary" href="/grants" role="button">Back</a>
+</div>
+
+
+
+{% endblock body %}

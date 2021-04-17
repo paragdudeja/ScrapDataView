@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Case Studies {% endblock title %}
+
+
+
+{% block body %}
+
+<form method="post" action="/view_case_study">
+    {% csrf_token %}
+    <div class="mb-3 my-4 mx-3">
+        <label for="casestudytitle" class="form-label">Case Study Title</label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Enter Case Study title" aria-describedby="caseStudyTitleHelp" required>
+        <div id="caseStudyTitleHelp" class="form-text">Type case study title in above field</div>
+    </div>
+    <div class="mb-3 my-4 mx-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock body %}

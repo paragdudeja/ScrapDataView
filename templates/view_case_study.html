@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} Case Study Info {% endblock title %}
+
+
+{% block body %}
+
+<div class="container my-3 ">
+<h3> <u>Case Study Search Results</u> </h3>
+</div>
+
+<ul style="list-style-type:none;">
+{% for element in results %}
+<li>
+    <div class="container my-4">
+        <strong>Title</strong> : {{ element.title }}
+    </div>
+
+    <div class="container my-2">
+        <strong>Detail Link</strong> : 
+        <a href = "{{ element.detail_link }}" >{{ element.detail_link }}</a>
+    </div>
+
+    <div class="container my-2">
+        <strong>Business</strong> : {{ element.business }}
+    </div>
+
+    <div class="container my-2">
+        <strong>Expertise</strong> : {{ element.expertise }}
+    </div>
+
+    <div class="container my-2">
+        <strong>Challenge</strong> : {{ element.challenge }}
+    </div>
+
+    <div class="container my-2">
+        <strong>Solution</strong> : {{ element.solution }}
+    </div>
+    <div class="container">
+        <hr>
+    </div>  
+</li>
+</u>
+
+{% endfor %}
+
+<div class="container my-3">
+    <a class="btn btn-primary" href="/case_studies" role="button">Back</a>
+</div>
+{% endblock body %}

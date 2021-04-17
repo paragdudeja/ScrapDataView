@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} Grants {% endblock title %}
+
+
+
+{% block body %}
+
+<form method="post" action="/view_grant">
+    {% csrf_token %}
+    <div class="mb-3 my-4 mx-3">
+        <label for="fundtitle" class="form-label">Fund Title</label>
+        <input type="text" class="form-control" id="fund_title" name="fund_title" placeholder="Enter fund title" aria-describedby="fundTitleHelp" required>
+        <div id="fundTitleHelp" class="form-text">Type fund title in above field</div>
+    </div>
+    <div class="mb-3 my-4 mx-3">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock body %}
